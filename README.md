@@ -235,14 +235,14 @@ Often, you will need to use containers to run specific commands, analyses or tas
 To do so, you need to add flag(s) to a docker image when you run it.
 
 
-1.  Run docker container in interactive mode
+### 1.  Run docker container in interactive mode ###
 
 `docker run -t -i ubuntu /bin/bash`
 
   - `-t` flag: Allocate a psuedo-tty to allow us to access the container interactively
   - `-i` flag: interactive mode
 
-2. Remove container automatically after exited
+### 2. Remove container automatically after exited ###
 
 docker run --rm -t -i ubuntu /bin/bash
 
@@ -254,7 +254,7 @@ For the above approach to work the image has to run a shell by default (most Lin
 
 What’s the difference between the –entrypoint option and placing /bin/sh at the end of the command? Some images are pre-configured with an entrypoint - the command to run by default within a container started from the image. If the default command that runs when you start the container is not the command you want to run, you can override it using the `--entrypoint` option. If an image does not have an entrypoint pre-configured, you tell Docker what command to run when starting a container from the image at the end of the `docker run` command.
 
-3. Run docker container in background and allow to interact later
+### 3. Run docker container in background and allow to interact later ###
 
 `docker run -t -d ubuntu`
 
@@ -267,7 +267,7 @@ Then, let’s start an interactive shell directly in the container image using t
 
 `docker exec -i -t <container name> bash`
 
-To get out of the container, use exit command.
+To get out of the container, use `exit` command.
 
 Finally, we need to stop the container (it is still running in the background). We use the `docker stop`  command with the container `name`  or `ID`  to do this.
 
